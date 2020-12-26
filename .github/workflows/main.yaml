@@ -5,7 +5,7 @@ on:
 jobs:
   lint:
     name: Lint with PHP_CodeSniffer
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -20,7 +20,7 @@ jobs:
         run: vendor/bin/phpcs
   tests:
     name: Test with PHPUnit
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
