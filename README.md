@@ -10,7 +10,14 @@ Uses the sniffs from [PHP_CodeSniffer][1] and
 [1]: https://github.com/squizlabs/PHP_CodeSniffer 
 [2]: https://github.com/slevomat/coding-standard
 
-Maintained by:
-- [Mathieu Bour](https://github.com/mathieu-bour), Vice-CTO [@Mathrix][mathrix]
+## Installation
 
-[mathrix]: https://github.com/mathieu-bour
+```shell
+composer require mathieu-bour/coding-standard
+```
+
+In your phpcs.xml(.dist) file, refer to the standard with:
+
+```xml
+<rule ref="Windy"/>
+```

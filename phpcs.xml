@@ -17,6 +17,5 @@
   <!-- Inclusions -->
   <file>tests</file>
 
-  <!-- Rules inherited from Doctrine -->
   <rule ref="Windy"/>
 </ruleset>
