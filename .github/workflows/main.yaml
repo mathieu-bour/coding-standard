@@ -1,0 +1,35 @@
+name: Validation
+on:
+  push:
+    branches: ['**'] # Do not run on tags
+jobs:
+  lint:
+    name: Lint with PHP_CodeSniffer
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.0
+          coverage: none
+      - name: Install dependencies
+        run: composer install --no-progress --no-suggest --prefer-dist
+      - name: Run PHP_CodeSniffer
+        run: vendor/bin/phpcs
+  tests:
+    name: Test with PHPUnit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.0
+          coverage: none
+      - name: Install dependencies
+        run: composer install --no-progress --no-suggest --prefer-dist
+      - name: Run PHPUnit
+        run: vendor/bin/phpunit --testdox
